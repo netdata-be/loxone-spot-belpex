@@ -41,7 +41,7 @@ def index():
             output = data_today.json()
             try:
                 print("Setting cache")
-                cache.set(date_today, output)
+                cache.set(date_today, output, 3600)
             except:
                 None
 
@@ -63,7 +63,7 @@ def index():
         try:
             output = output + data_tommorow.json()
             try:
-                cache.set(date_tommorow, output, 10)
+                cache.set(date_tommorow, output, 3600)
             except:
                 None
         except Exception as e:
